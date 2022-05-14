@@ -1,15 +1,16 @@
 public class openMobileAccount extends Account{
 
+    boolean validUser;
 
-    public openMobileAccount(){
-        super();
-    }
 
-    public boolean validateUser(String userName, String password){
-        if(userName != this.getAccountName() || password != this.getPassword()){
-            return false;
+    public static boolean validateUser(String userName, String password){
+        for (int i = 0; i < Account.getAccountLists().size(); i++){
+            if(userName.equals(Account.getAccountLists().get(i).getuserName()) && 
+            password.equals(Account.getAccountLists().get(i).getPassword())){
+                return true;
+            }
         }
-        return true;
+        return false;
     }
 
 

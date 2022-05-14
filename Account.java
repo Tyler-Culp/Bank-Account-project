@@ -1,11 +1,14 @@
+import java.util.*;
+
 public class Account{
   private double balance;
   private String accountName;
   private String userName;
   private String password;
-  private int accountNumber;
+  private static ArrayList<Account> accountsList;
 
   public Account(){
+
   }
   
   public Account(String name, double initialBalance, String userName, String password){
@@ -13,6 +16,7 @@ public class Account{
     this.balance = initialBalance;
     this.userName = userName;
     this.password = password;
+    accountsList.add(this);
   }
 
   public double getBalance(){
@@ -35,15 +39,22 @@ public class Account{
     this.balance += depositAmount;
   }
 
-  public double withdraw(double withdrawAmount){
+  public void withdraw(double withdrawAmount){
     if (this.balance >= withdrawAmount){
       this.balance -= withdrawAmount;
-      return withdrawAmount;
+      return;
     }
 
     else{
       System.out.println("Not enough money in account!");
-      return 0;
+      return;
     }
   }
+
+  public static ArrayList<Account> getAccountLists(){
+    return accountsList;
+  }
+
+
+
 }
