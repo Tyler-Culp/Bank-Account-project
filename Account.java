@@ -5,8 +5,7 @@ public class Account{
   private String accountName;
   private String userName;
   private String password;
-  private static ArrayList<Account> accountsList;
-
+  private static ArrayList<Account> accountsList = new ArrayList<>();
   public Account(){
 
   }
@@ -16,7 +15,6 @@ public class Account{
     this.balance = initialBalance;
     this.userName = userName;
     this.password = password;
-    accountsList.add(this);
   }
 
   public double getBalance(){
@@ -55,6 +53,9 @@ public class Account{
     return accountsList;
   }
 
+  public static void addToAccountList(Account toAdd){
+    accountsList.add(toAdd);
+  }
 
 
 }
