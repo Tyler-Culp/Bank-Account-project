@@ -1,14 +1,34 @@
 public class Account{
   private double balance;
   private String accountName;
+  private String userName;
+  private String password;
+  private int accountNumber;
+
+  public Account(){
+  }
   
-  public Account(String name, double initialBalance){
+  public Account(String name, double initialBalance, String userName, String password){
     this.accountName = name;
     this.balance = initialBalance;
+    this.userName = userName;
+    this.password = password;
   }
 
   public double getBalance(){
     return this.balance;
+  }
+
+  public String getAccountName(){
+    return this.accountName;
+  }
+
+  public String getuserName(){
+    return this.userName;
+  }
+
+  public String getPassword(){
+    return this.password;
   }
 
   public void deposit(double depositAmount){
