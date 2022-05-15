@@ -17,8 +17,8 @@ public class Account{
     this.password = password;
   }
 
-  public double getBalance(){
-    return this.balance;
+  public void getBalance(){
+    System.out.println(this.balance);
   }
 
   public String getAccountName(){
@@ -35,11 +35,16 @@ public class Account{
 
   public void deposit(double depositAmount){
     this.balance += depositAmount;
+    System.out.println(("Your new balance is: "));
+    this.getBalance();
+
   }
 
   public void withdraw(double withdrawAmount){
     if (this.balance >= withdrawAmount){
       this.balance -= withdrawAmount;
+      System.out.println(("Your new balance is: "));
+      this.getBalance();
       return;
     }
 
