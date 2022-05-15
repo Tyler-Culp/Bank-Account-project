@@ -54,9 +54,6 @@ public class openSession{
     }
 
     public static void main(String[] args){
-        Account createdAccount = new Account("Tyler's checking", 500.00, "tculp", "Norf Norf");
-        Account.addToAccountList(createdAccount);
-        //System.out.println(Account.getAccountLists().size());
         openSession current = new openSession();
         current.openNewSession();
     }
